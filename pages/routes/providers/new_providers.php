@@ -3,9 +3,19 @@
         <!-- Sección de Descarga y Carga de Excel -->
         <div class="box mb-6">
             <!-- Mensaje de Instrucción -->
-            <div class="notification is-info">
-                <p>Por favor, descargue el archivo Excel con las columnas requeridas, complete los datos y luego cárguelo en el campo de carga para procesarlo.</p>
+            <div class="notification is-info has-text-centered">
+            <p class="mb-4">Por favor, descargue el archivo Excel con las columnas requeridas, complete los datos y luego cárguelo en el campo de carga para procesarlo. Cuando descargue el archivo, asegúrese de nombrarlo como el nombre de la tabla en la que desea guardar los datos. Por ejemplo, si desea cargar datos en la tabla de proveedores, el archivo debe llamarse <strong>proveedores.xlsx</strong>.</p>
+
+            <p class="title is-5 mb-3">Las tablas disponibles para cargar son:</p>
+            <ul class="content">
+                <li><i class="fas fa-file-excel mr-2"></i><strong>proveedores.xlsx</strong> - Para cargar datos en la tabla de proveedores.</li>
+                <li><i class="fas fa-file-excel mr-2"></i><strong>productos.xlsx</strong> - Para cargar datos en la tabla de productos.</li>
+                <li><i class="fas fa-file-excel mr-2"></i><strong>clientes.xlsx</strong> - Para cargar datos en la tabla de clientes.</li>
+                <li><i class="fas fa-file-excel mr-2"></i><strong>sueldos.xlsx</strong> - Para cargar datos en la tabla de sueldos.</li>
+                <li><i class="fas fa-file-excel mr-2"></i><strong>trabajadores.xlsx</strong> - Para cargar datos en la tabla de trabajadores.</li>
+            </ul>
             </div>
+
 
             <!-- Título de la sección -->
             <h2 class="title is-4">Descargar y Cargar Archivo Excel</h2>
@@ -52,6 +62,7 @@
             <h2 class="title is-4">Agregar Proveedor Manualmente</h2>
 
             <form action="http://localhost/firstApp/php/save_provider.php" method="post" class="f_ajax">
+                <!-- Campos del formulario -->
                 <div class="field">
                     <label class="label">Nombre y Apellido (Titular)</label>
                     <div class="control">
@@ -133,6 +144,55 @@
         </div>
     </div>
 </section>
+
+<!-- Estilos personalizados -->
+<style>
+    /* Mejorar la apariencia del contenedor de carga */
+    .file {
+        background-color: #f1f5f9; /* Fondo claro para el área de carga */
+        border-radius: 5px;
+        padding: 15px;
+        border: 2px dashed #00d1b2; /* Borde sutil y colorido */
+        transition: border-color 0.3s ease;
+    }
+
+    .file:hover {
+        border-color: #00c4a7; /* Cambia de color al pasar el ratón */
+    }
+
+    .file-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: #00d1b2; /* Botón de acción con color verde */
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .file-cta:hover {
+        background-color: #00c4a7; /* Cambiar color al pasar el ratón */
+    }
+
+    .file-icon {
+        margin-right: 10px;
+    }
+
+    .file-name {
+        font-size: 0.9rem;
+        color: #4a4a4a;
+        margin-top: 10px;
+    }
+
+    /* Estilo adicional para el mensaje de archivo cargado */
+    .help.is-success {
+        font-size: 1rem;
+        color: #23d160;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+</style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
